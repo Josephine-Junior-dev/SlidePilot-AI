@@ -85,3 +85,14 @@ hr{border:0;border-top:1px solid #dfe4ed;margin:18px 0}
 @media(max-width:760px){aside{inset:auto 0 0 0;width:100%;height:auto;min-height:68px;padding:7px 10px calc(7px + env(safe-area-inset-bottom));flex-direction:row;align-items:center;justify-content:space-around;gap:6px;border-top:1px solid #35405b}.brand{display:none}.aside-spacer{display:none}.nav{width:auto;flex:1;text-align:center;margin:0;padding:10px 5px;font-size:12px;white-space:nowrap;min-height:46px}.bottom{display:contents}.bottom p{display:none}main{margin-left:0;padding:18px 4% 100px;max-width:none}header{align-items:flex-start}header h2{font-size:18px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.authbox{padding:26px}.authbox h1{font-size:34px}.grid{grid-template-columns:1fr}.hero{padding:23px}.hero h1{font-size:28px}.cards{grid-template-columns:1fr 1fr}.editor{grid-template-columns:64px minmax(0,1fr);gap:6px}.toolbar{gap:5px}.toolbar button{font-size:11px;padding:9px 10px}.toolbar input{flex-basis:100%;order:-1}.canvas{padding:6%;min-height:190px}.canvas h1{font-size:clamp(20px,6vw,30px)}.inspector{padding:9px;gap:8px}.row{gap:8px}.row label{font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Sidebar contrast fix: keep every sidebar label and navigation control readable. */
+aside{background:#101a33!important;color:#fff!important}
+aside .brand,aside .brand strong,aside .brand span,aside .brand small,aside p,aside label,aside a{color:#fff!important}
+aside .brand small{color:#dbe4f5!important}
+aside button.nav{background:#263653!important;color:#fff!important;border:1px solid #52617d!important;opacity:1!important;text-shadow:none!important}
+aside button.nav:hover,aside button.nav:focus-visible{background:#3b4d72!important;color:#fff!important}
+aside button.nav.active{background:#6558ed!important;color:#fff!important;border-color:#958cff!important}
+aside .bottom p{background:#263653!important;color:#fff!important}
+aside button{font-weight:800!important}
+@media(max-width:760px){aside button.nav{background:#263653!important;color:#fff!important;border:1px solid #52617d!important}aside button.nav.active{background:#6558ed!important;color:#fff!important}}
