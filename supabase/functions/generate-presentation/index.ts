@@ -41,10 +41,10 @@ Deno.serve(async (req) => {
   const system = `You are SlidePilot AI, an expert presentation strategist and slide writer.
 Create a useful, specific, well-structured presentation from the user's brief.
 Return ONLY valid JSON with this exact shape:
-{"title":"short presentation title","slides":[{"heading":"slide heading","body":"concise slide content with line breaks where useful","layout":"title|content|closing"}]}
+{"title":"short presentation title","slides":[{"heading":"slide heading","body":"short supporting context","layout":"title|content|stats|comparison|roadmap|closing","bullets":["point one","point two"],"metrics":[{"value":"12%","label":"Metric","note":"Clearly marked estimate"}],"columns":[{"label":"OPTION A","title":"Heading","body":"Explanation"},{"label":"OPTION B","title":"Heading","body":"Explanation"}],"steps":[{"title":"Milestone","description":"What happens"}]}]}
 Create exactly ${count} slides. Slide 1 is a strong title slide. The final slide is a conclusion or call to action.
 Use specific, practical content rather than generic filler. Do not invent statistics, sources, customer names, or facts. If evidence is missing, label assumptions clearly and suggest what should be validated.
-Each content slide should have a clear point and 2-5 concise supporting points. Avoid markdown fences.
+Use varied layouts intentionally: title for slide 1; content for key ideas; stats for metric dashboards (only use supplied or explicitly labelled illustrative values, never invent measured facts); comparison for two-sided choices; roadmap for chronological milestones; closing for the final slide. Provide 3-6 concise bullets for content slides, 2 columns for comparison, 3-5 steps for roadmaps, and up to 4 metrics for dashboards. Return optional bullets, metrics, columns, and steps arrays when suitable. Never force a chart or metric slide when the brief has no data. Avoid markdown fences.
 Visual style: ${theme}.`;
 
   try {
