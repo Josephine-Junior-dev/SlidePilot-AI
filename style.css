@@ -96,3 +96,21 @@ aside button.nav.active{background:#6558ed!important;color:#fff!important;border
 aside .bottom p{background:#263653!important;color:#fff!important}
 aside button{font-weight:800!important}
 @media(max-width:760px){aside button.nav{background:#263653!important;color:#fff!important;border:1px solid #52617d!important}aside button.nav.active{background:#6558ed!important;color:#fff!important}}
+
+/* Final sidebar palette: light surface with dark readable labels. */
+#app>aside{background:#ffffff!important;color:#17213d!important;border-right:1px solid #d8deea!important;box-shadow:4px 0 18px #17213d0d}
+#app>aside .brand{color:#17213d!important}
+#app>aside .brand b:not(.logo){color:#17213d!important}
+#app>aside .brand small{color:#526078!important}
+#app>aside button.nav{display:block!important;background:#eef1f7!important;color:#17213d!important;border:1px solid #d5dcea!important;opacity:1!important;text-shadow:none!important;box-shadow:none!important}
+#app>aside button.nav:hover,#app>aside button.nav:focus-visible{background:#e0e6f2!important;color:#111a32!important}
+#app>aside button.nav.active{background:#5147d9!important;color:#ffffff!important;border-color:#5147d9!important}
+#app>aside #signout{background:#fff1f0!important;color:#a32626!important;border-color:#f0c9c6!important}
+#app>aside #signout:hover{background:#ffe1df!important;color:#7f1d1d!important}
+#app>aside .bottom p{background:#f1f3f8!important;color:#34415a!important;border:1px solid #dce2ed}
+@media(max-width:760px){
+ #app>aside{background:#fff!important;border-top:1px solid #d8deea!important;box-shadow:0 -4px 18px #17213d12}
+ #app>aside button.nav{background:#eef1f7!important;color:#17213d!important}
+ #app>aside button.nav.active{background:#5147d9!important;color:#fff!important}
+ #app>aside #signout{background:#fff1f0!important;color:#a32626!important}
+}
