@@ -82,7 +82,11 @@ Visual style: ${theme}.`;
     const slides = deck.slides.map((slide: Record<string, unknown>, index: number) => ({
       heading: String(slide.heading ?? `Slide ${index + 1}`).slice(0, 180),
       body: String(slide.body ?? "").slice(0, 3000),
-      layout: index === 0 ? "title" : index === count - 1 ? "closing" : "content",
+      layout: index === 0 ? "title" : index === count - 1 ? "closing" : ["content", "stats", "comparison", "roadmap"].includes(String(slide.layout)) ? String(slide.layout) : "content",
+      bullets: Array.isArray(slide.bullets) ? slide.bullets.slice(0, 8).map((x) => String(x).slice(0, 240)) : [],
+      metrics: Array.isArray(slide.metrics) ? slide.metrics.slice(0, 4).map((m) => ({ value: String((m as Record<string, unknown>).value ?? ""), label: String((m as Record<string, unknown>).label ?? ""), note: String((m as Record<string, unknown>).note ?? "") })) : [],
+      columns: Array.isArray(slide.columns) ? slide.columns.slice(0, 2).map((c) => ({ label: String((c as Record<string, unknown>).label ?? ""), title: String((c as Record<string, unknown>).title ?? ""), body: String((c as Record<string, unknown>).body ?? "") })) : [],
+      steps: Array.isArray(slide.steps) ? slide.steps.slice(0, 6).map((st) => ({ title: String((st as Record<string, unknown>).title ?? ""), description: String((st as Record<string, unknown>).description ?? "") })) : [],
     }));
 
     return json({
